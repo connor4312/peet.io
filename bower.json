@@ -1,0 +1,22 @@
+{
+  "name": "peet.io",
+  "version": "0.0.0",
+  "authors": [
+    "Connor Peet <connor@connorpeet.com>"
+  ],
+  "main": "Gruntfile.js",
+  "license": "Proprietary",
+  "homepage": "https://github.com/connor4312/peet.io",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.2",
+    "superscrollorama": "~1.0.2"
+  }
+}
