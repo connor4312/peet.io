@@ -20,8 +20,9 @@
 @headings-font-family:    @font-family-sans-serif;
 
 @cloudwidth: 1776px;
+@section-spacing: 40px;
 
-.navbar {
+#navbar {
 	position: fixed;
 	top: 0px;
 	left: 0px;
@@ -67,7 +68,7 @@
   100% { left: -@cloudwidth; }
 }
 
-.intro {
+#intro {
 	min-height: 700px;
 	position: relative;
 	background: rgba(red(@brand-primary), green(@brand-primary), blue(@brand-primary), 0.75);
@@ -92,7 +93,7 @@
 		background: url('../img/clouds.png') center center repeat-x;
 		z-index: -1;
 		width: @cloudwidth * 3;
-		.animation(cloudscroll 60s linear infinite);
+		.animation(cloudscroll 40s linear infinite);
 	}
 
 	.sublime {
@@ -126,5 +127,200 @@
 			color: #fff;
 			margin-top: 0.3em;
 		}
+	}
+}
+
+h1.header {
+	text-align: center;
+	font-size: 3.2em;
+	padding: 0 5em;
+	margin: 0 0 @section-spacing;
+	line-height: 2em;
+
+
+	span {
+		display: inline-block;
+		width: 2em;
+		height: 0.4em;
+		border-top: 1px solid #ccc;
+		margin: 1px 0.5em 0;
+	}
+}
+
+p {
+	font-size: 1.1em;
+	line-height: 1.5em;
+}
+
+.section {
+	padding: @section-spacing 0;
+}
+
+#about {
+	background: url('../img/profile.jpg') center left no-repeat;
+	background-size: cover;
+}
+
+#work {
+	background: #1c1f26;
+
+	h1 {
+		color: #fff;
+
+		span {
+			border-color: #444;
+		}
+	}
+
+	.work {
+		display: block;
+		margin: 15px 0;
+		position: relative;
+		height: 200px;
+		background-size: contain;
+		background-position: center top;
+
+		&:before, span {
+			position: absolute;
+			display: block;
+			left: 0;
+			right: 0;
+			.transition(0.5s);
+		}
+
+		span {
+			top: 30%;
+			text-align: center;
+			color: #fff;
+			font-size: 2em;
+			margin-top: -1em;
+			text-shadow: 0 1px 2px #000;
+			font-weight: 100;
+			opacity: 0;
+		}
+
+		&:before {
+			content: "";
+			top: 0;
+			bottom: 0;
+			box-shadow: inset 0 10px 100px rgba(0, 0, 0, 0.75);
+		}
+
+		&:hover {
+			span {
+				top: 50%;
+				opacity: 1;
+			}
+
+			&:before {
+				box-shadow: inset 0 100px 150px rgba(0, 0, 0, 0.75);
+			}
+		}
+	}
+}
+
+#testimonial {
+	background: @brand-primary;
+	color: #8de4ef;
+	text-align: center;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+
+	li {
+		list-style-type: none;
+	}
+
+	b {
+		font-weight: normal;
+		color: #fff;
+	}
+
+	i {
+		display: block;
+		color: #000;
+		font-size: 0.8em;
+		font-style: normal;
+		text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1);
+		margin-top: 0.3em;
+	}
+
+	.nav li {
+		display: inline-block;
+		background: #000;
+		width: 0.5em;
+		height: 0.5em;
+		border-radius: 50%;
+		margin: 0 0.25em;
+		box-shadow: 0 -1px 0 rgba(255, 255, 255, 0.25);
+		.transition(0.3s);
+		
+		&.active {
+			background: #fff;
+			box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+}
+
+textarea, input {
+	display: block;
+	width: 100%;
+	background: #f1f1f1;
+	border: 3px solid #f1f1f1;
+	padding: 0.5em;
+	font-size: 1.2em;
+	margin: 0.5em 0;
+
+	color: #666;
+	.transition(0.3s);
+	.placeholder(#666);
+
+	&:focus {
+		background: #fff;
+		box-shadow: none;
+		outline: 0;
+		color: #000;
+	}
+}
+
+input[type="submit"] {
+	font-size: 1em;
+	background: @brand-primary;
+	color: #000;
+	text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.1);
+}
+
+a.social {
+	display: inline-block;
+	width: 1.8em;
+	line-height: 1.8em;
+	font-size: 3em;
+	border-radius: 50%;
+	text-align: center;
+	margin: 0.2em;
+
+	&.skype {
+		background: #3e9dd7;
+		color: #fff;
+	}
+
+	&.github {
+		background: #000;
+		color: #fff;
+	}
+
+	&.email {
+		background: #f1f1f1;
+		color: #444;
+	}
+
+	&.twitter {
+		background: #00acee;
+		color: #fff;
 	}
 }
