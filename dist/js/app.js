@@ -1,2 +1,0 @@
-/*! (c) 2014 by Connor Peet */
-(function(){$(document).ready(function(){return $("html").niceScroll({autohidemode:!1}),$(".work").each(function(){return $(this).css("background-image",'url("work/'+$(this).attr("data-name")+'/thumb.jpg")')})})}).call(this);
