@@ -40,7 +40,3 @@ Thumbs.db
 ############
 node_modules
 bower_components
-
-dist/css
-dist/img
-dist/js
