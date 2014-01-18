@@ -347,3 +347,104 @@ a.social {
 		color: #fff;
 	}
 }
+
+@-webkit-keyframes fixedopen {
+  0%   { top: 49.5%; width: 0%; height: 1%;}
+  40%  { top: 49.5%; width: 100%; height: 1%; }
+  60%  { top: 49.5%; width: 100%; height: 1%; }
+  100% { top: 0%; width: 100%; height: 100%; }
+}
+@-moz-keyframes fixedopen {
+  0%   { top: 49.5%; width: 0%; height: 1%;}
+  40%  { top: 49.5%; width: 100%; height: 1%; }
+  60%  { top: 49.5%; width: 100%; height: 1%; }
+  100% { top: 0%; width: 100%; height: 100%; }
+}
+@keyframes fixedopen {
+  0%   { top: 49.5%; width: 0%; height: 1%;}
+  40%  { top: 49.5%; width: 100%; height: 1%; }
+  60%  { top: 49.5%; width: 100%; height: 1%; }
+  100% { top: 0%; width: 100%; height: 100%; }
+}
+
+@-webkit-keyframes fixedopen_fader {
+  0%   { opacity: 0%; }
+  40%  { top: 49%;}
+  60%  { opacity: 0%; }
+  100% { opacity: 100%;}
+}
+@-moz-keyframes fixedopen_fader {
+  0%   { opacity: 0%; }
+  40%  { top: 49%;}
+  60%  { opacity: 0%; }
+  100% { opacity: 100%;}
+}
+@keyframes fixedopen_fader {
+  0%   { opacity: 0%; }
+  40%  { top: 49%;}
+  60%  { opacity: 0%; }
+  100% { opacity: 100%;}
+}
+
+#item {
+	position: fixed;
+	left: 0px;
+	.animation(fixedopen 2s forwards);
+	background: #fff;
+	z-index: 10000;
+
+	h1 {
+		font-size: 7em;
+		font-weight: 200;
+	}
+	.bg img {
+		width: 100%;
+		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+	}
+	.workpad {
+		padding: 20px;
+	}
+
+	.content {
+		.animation(fixedopen_fader 2s forwards);
+	}
+
+	@closesize: 50px;
+
+	.close {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		width: @closesize;
+		height: @closesize;
+		overflow: hidden;
+		cursor: pointer;
+
+		&:hover {
+			&:after, &:before {
+				border-color: #000;
+			}
+		}
+
+		&:after, &:before {
+			width: 100px;
+			border-top: 1px solid #666;
+			content: "";
+			display: block;
+			position: absolute;
+			.transition(0.3s);
+		}
+
+		&:before {
+			-webkit-transform: rotate(-45deg);
+			top: (@closesize * 0.5);
+			left: -(@closesize * 0.5);
+		}
+
+		&:after {
+			-webkit-transform: rotate(45deg);
+			left: -(@closesize * 0.5);
+			top: (@closesize * 0.5);
+		}
+	}
+}
