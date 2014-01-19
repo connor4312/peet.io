@@ -177,7 +177,7 @@ p {
 		margin: 15px 0;
 		position: relative;
 		height: 200px;
-		background-size: contain;
+		background-size: cover;
 		background-position: center top;
 
 		&:before, span {
@@ -352,19 +352,19 @@ a.social {
   0%   { top: 49.5%; width: 0%; height: 1%;}
   40%  { top: 49.5%; width: 100%; height: 1%; }
   60%  { top: 49.5%; width: 100%; height: 1%; }
-  100% { top: 0%; width: 100%; height: 100%; }
+  100% { top: 10%; width: 100%; height: 80%; }
 }
 @-moz-keyframes fixedopen {
   0%   { top: 49.5%; width: 0%; height: 1%;}
   40%  { top: 49.5%; width: 100%; height: 1%; }
   60%  { top: 49.5%; width: 100%; height: 1%; }
-  100% { top: 0%; width: 100%; height: 100%; }
+  100% { top: 10%; width: 100%; height: 80%; }
 }
 @keyframes fixedopen {
   0%   { top: 49.5%; width: 0%; height: 1%;}
   40%  { top: 49.5%; width: 100%; height: 1%; }
   60%  { top: 49.5%; width: 100%; height: 1%; }
-  100% { top: 0%; width: 100%; height: 100%; }
+  100% { top: 10%; width: 100%; height: 80%; }
 }
 
 @-webkit-keyframes fixedopen_fader {
@@ -392,6 +392,8 @@ a.social {
 	.animation(fixedopen 2s forwards);
 	background: #fff;
 	z-index: 10000;
+	box-shadow: 0 0 50px #000;
+	overflow: hidden;
 
 	h1 {
 		font-size: 7em;
@@ -401,11 +403,11 @@ a.social {
 		width: 100%;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 	}
-	.workpad {
+	td {
 		padding: 20px;
 	}
 
-	.content {
+	.content, .close {
 		.animation(fixedopen_fader 2s forwards);
 	}
 

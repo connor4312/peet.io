@@ -14,7 +14,7 @@ $(document).ready ->
 
 		$.get 'work/' + name + '/index.html', (data) ->
 			$('.content', $item).html(data)
-			$('td', $item).attr 'height', $(window).height()
+			$('td', $item).attr 'height', $(window).height() * 0.8
 
 
 	$('.work').each ->
@@ -56,7 +56,7 @@ $(document).ready ->
 		'#intro',
 		TweenMax.fromTo($('#navbar'), 1,
 			{ css: { background: 'rgba(0, 0, 0, 0)' }, immediateRender:true },
-			{ css: { background: 'rgba(0, 0, 0, 0.75)' }}
+			{ css: { background: 'rgba(0, 0, 0, 1)' }}
 		), sh * 0.25
 	)
 	controller.addTween(
