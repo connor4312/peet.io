@@ -403,12 +403,29 @@ a.social {
 		width: 100%;
 		box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 	}
+	td.bg {
+		padding: 0;
+	}
+	
 	td {
 		padding: 20px;
 	}
 
 	.content, .close {
 		.animation(fixedopen_fader 2s forwards);
+	}
+
+	li:before {
+		content: "x";
+		position: absolute;
+		left: -0.75em;
+		font-family: @font-family-sans-serif;
+		font-size: 1.2em;
+		line-height: 1em;
+	}
+	li {
+		list-style-type: none;
+		position: relative;
 	}
 
 	@closesize: 50px;

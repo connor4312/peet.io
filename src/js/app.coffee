@@ -16,6 +16,11 @@ $(document).ready ->
 			$('.content', $item).html(data)
 			$('td', $item).attr 'height', $(window).height() * 0.8
 
+			$wrap = $('<div />').css
+				'max-height': ($(window).height() * 0.8) + 'px'
+				'overflow': 'hidden'
+			$('td.bg', $item).wrapInner $wrap
+
 
 	$('.work').each ->
 		name = $(@).attr 'data-name'
