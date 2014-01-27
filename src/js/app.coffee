@@ -85,3 +85,41 @@ $(document).ready ->
 
 			e.preventDefault()
 			return false
+
+	# AJAX submission on the contact form
+
+	$('form').on 'submit', (e) ->
+
+		e.preventDefault()
+
+		$form = $(@)
+		data = {}
+		for i in $('[name]', $form)
+			data[$(i).attr('name')] = $(i).val()
+			$(i).attr 'disabled', 'disabled'
+
+		success = '''
+			<div class="alert alert-success">
+				Your message has been sent. I will get back to you as soon as I am able!
+			</div>
+		'''
+
+		failure = '''
+			<div class="alert alert-danger">
+				An error occured! Try contacting me directly by email (connor@peet.io) or Skype (connor4312) instead.
+			</div>
+		'''
+
+		$.ajax
+			url: $form.attr('action')
+			type: $form.attr('method')
+			data: data
+			error: -> $form.prepend failure
+			success: (response) ->
+				if response is '1'
+					$form.prepend success
+				else
+					$form.prepend failure
+
+
+
