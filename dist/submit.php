@@ -6,7 +6,7 @@ function send() {
 			return false;
 		}
 
-		$_POST[$i] = filter_var($_POST[$i], FILTER_SANITIZE_EMAIL);
+		$_POST[$i] = str_replace(array( "\r", "\n", "%0a", "%0d"), ' ', $_POST[$i]);
 	}
 
 	return mail('connor@peet.io', 'Website Contact', "
