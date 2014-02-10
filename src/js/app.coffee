@@ -1,6 +1,4 @@
 $(document).ready ->
-	# Set up nice scrolling for smooth awesomeness
-	$('html').niceScroll { autohidemode: false }
 
 	# Link up portofilio items correctly
 	openSlider = (self, name) ->
