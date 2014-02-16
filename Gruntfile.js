@@ -15,7 +15,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           cwd: 'src',
-          src: ['**/*.{jpg,ico}'],
+          src: ['**/*.{jpg,ico,js}'],
           dest: 'dist'
         }, {
           src: 'bower_components/superscrollorama/js/jquery.superscrollorama.js',

@@ -32,6 +32,10 @@
 	text-align: center;
 	z-index: 1000;
 
+	@media (max-width: @screen-sm-max) {
+		display: none;
+	}
+
 	.container {
 		box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -1px 0 rgba(0, 0, 0, 0.1);
 	}
@@ -206,6 +210,7 @@ p {
 			top: 0;
 			bottom: 0;
 			box-shadow: inset 0 20px 150px rgba(0,0,0,1);
+			background: rgba(0, 0, 0, 0);
 		}
 
 		&:hover {
@@ -215,7 +220,7 @@ p {
 			}
 
 			&:before {
-				box-shadow: inset 0 100px 150px rgba(0, 0, 0, 1);
+				background: rgba(0, 0, 0, 0.5);
 			}
 		}
 	}
