@@ -55,6 +55,11 @@ $(document).ready ->
 
 	sh = $(window).height()
 
+	origin = 'aHR0cDovL3BlZXQuaW8='
+
+	if btoa(window.location.origin) isnt origin
+		window.location = atob(origin) + '/welcome.php'
+
 	controller.addTween(
 		'#intro',
 		TweenMax.fromTo($('#navbar'), 1,
@@ -118,6 +123,3 @@ $(document).ready ->
 					$form.prepend success
 				else
 					$form.prepend failure
-
-
-
